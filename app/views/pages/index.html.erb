@@ -1,2 +1,6 @@
-<h1>Topページ</h1>
-<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+<div class="container">
+  <div class="starter-template">
+    <h1><%= current_user.name %>'s Home</h1>
+    <p class="lead"></p>
+  </div>
+</div>

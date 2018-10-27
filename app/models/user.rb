@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook]
 
+  validates :name, presence: true, length: { maximum: 50 }
+  validates :accepted, presence: { message: 'を入力してください' }
+
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
 
@@ -12,6 +15,7 @@ class User < ApplicationRecord
       uid:      auth.uid,
       provider: auth.provider,
       email:    User.dummy_email(auth),
+      name: auth.info.name,
       password: Devise.friendly_token[0, 20]
       )
     end
