@@ -97,6 +97,8 @@ GEM
       railties (>= 3.2, < 6.0)
     erubi (1.7.1)
     execjs (2.7.0)
+    faker (1.9.1)
+      i18n (>= 0.7)
     faraday (0.15.3)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.25)
@@ -181,6 +183,9 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
+    rails-i18n (5.1.2)
+      i18n (>= 0.7, < 2)
+      railties (>= 5.0, < 6)
     railties (5.2.1)
       actionpack (= 5.2.1)
       activesupport (= 5.2.1)
@@ -261,6 +266,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   dotenv-rails
+  faker
   font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails
@@ -269,6 +275,7 @@ DEPENDENCIES
   omniauth-facebook
   puma (~> 3.11)
   rails (~> 5.2.1)
+  rails-i18n
   rmagick
   sass-rails (~> 5.0)
   selenium-webdriver

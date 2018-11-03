@@ -87,7 +87,8 @@ body {
 }
 
 .edit-profile-btn {
-  margin: 15px 0 0 15px;
+  margin-top: 15px;
+  float: left;
   font-weight: bold;
   height: 26px;
   line-height: 26px;
@@ -194,4 +195,43 @@ body {
   float: right;
   margin: 5px 0 0 10px;
   background-size: 11px !important;
+}
+
+//フォローステータス
+.stats {
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid #eaeaea;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.users.follow {
+  padding: 0;
+}
+
+//ユーザー一覧
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid #eaeaea
+  }
 }

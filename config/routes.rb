@@ -4,10 +4,15 @@ Rails.application.routes.draw do
 
   root to: "pages#index"
   get "pages/terms" => "pages#terms"
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:index, :show, :edit, :update] do
+    member do
+      get :following, :followers
+    end
+  end
   resources :posts, only: [:index, :new, :create, :show] do
     resources :photos, only: [:create]
     resources :likes, only: [:create, :destroy], shallow: true
     resources :comments, only: [:index, :create, :destroy], shallow: true
   end
+  resources :relationships, only: [:create, :destroy]
 end
