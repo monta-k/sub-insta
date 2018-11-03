@@ -5,6 +5,9 @@ ruby '2.4.1'
 
 gem 'rails-i18n'
 
+gem 'kaminari'
+gem 'kaminari-bootstrap'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
 gem 'dotenv-rails', require: 'dotenv/rails-now'

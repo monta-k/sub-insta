@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 before_action :signed_in?, only: [:index]
 
   def index
-    @posts = current_user.feed.includes(:photos, :user, :likes).order('created_at DESC')
+    @posts = current_user.feed.includes(:photos, :user, :likes).order('created_at DESC').page(params[:page]).per(5)
   end
 
   def terms

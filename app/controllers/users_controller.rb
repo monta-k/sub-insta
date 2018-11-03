@@ -2,12 +2,12 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @users = User.all
+    @users = User.all.page(params[:page]).per(10)
   end
 
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts.includes(:photos, :user, :likes).order('created_at DESC')
+    @posts = @user.posts.includes(:photos, :user, :likes).order('created_at DESC').page(params[:page]).per(5)
   end
 
   def edit
@@ -27,13 +27,13 @@ class UsersController < ApplicationController
   def following
     @title = "Following"
     @user = User.find(params[:id])
-    @users = @user.following
+    @users = @user.following.page(params[:page]).per(10)
     render "show_follow"
   end
 
   def followers
     @title = "Followers"
-    @user = User.find(params[:id])
+    @user = User.find(params[:id]).page(params[:page]).per(10)
     @users = @user.followers
     render "show_follow"
   end
