@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-light fixed-bottom">
   <% if current_user %>
-    <%= link_to "投稿する", "#", class: "nav-link btn btn-primary" %>
+    <%= link_to "投稿する", new_post_path, class: "nav-link btn btn-primary", remote: true %>
   <% end %>
   <p class="mx-auto my-auto copy-right"><small>&copy; 2018 shunta.k</small></p>
 </nav>
+<div id="new_post-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
