@@ -1,7 +1,21 @@
 <div class="container">
-  <div class="starter-template">
-    <%= image_tag avatar_url(@user), class: "round-img" %>
-    <h1><%= @user.name %>'s Page</h1>
-    <p class="lead"></p>
+  <div class="profile-wrap">
+    <div class="row">
+    <div class="col-md-4 text-center">
+      <%= image_tag avatar_url(@user), class: "round-img" %>
+    </div>
+    <div class="col-md-8">
+      <div class="row">
+        <h1><%= @user.name %></h1>
+        <% if @user == current_user %>
+          <%= link_to "プロフィールを編集", edit_user_path(@user), class: "btn btn-outline-dark common-btn edit-profile-btn" %>
+        <% end %>
+      </div>
+      <div class="row">
+        <p>
+          <%= @user.email %>
+        </p>
+      </div>
+    </div>
   </div>
 </div>

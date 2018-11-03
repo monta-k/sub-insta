@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_27_183024) do
+ActiveRecord::Schema.define(version: 2018_10_31_105951) do
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -25,6 +25,11 @@ ActiveRecord::Schema.define(version: 2018_10_27_183024) do
     t.string "name", default: "", null: false
     t.string "image"
     t.boolean "accepted", default: false, null: false
+    t.string "website"
+    t.text "bio"
+    t.string "phonenumber"
+    t.integer "sex"
+    t.string "full_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

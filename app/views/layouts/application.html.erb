@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <%= render 'layouts/header' if current_user %>
+    <%= render 'layouts/header' %>
     <% if flash[:notice] %>
       <div class="alert alert-info"><%= flash[:notice] %></div>
     <% end %>
@@ -20,5 +20,6 @@
       <div class="alert alert-danger"><%= flash[:alert] %></div>
     <% end %>
     <%= yield %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

@@ -4,12 +4,15 @@
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
     <%= devise_error_messages! %>
     <%= f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: "form-control" %>
+    <%= f.text_field :full_name, autofocus: true, placeholder: "フルネーム", class: "form-control" %>
     <%= f.text_field :name, autofocus: true, placeholder: "ユーザーネーム", class: "form-control" %>
     <%= f.password_field :password, autocomplete: "off", placeholder: "パスワード", class: "form-control" %>
     <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "パスワードの確認", class: "form-control" %>
     <div class="field text-left">
       <%= f.check_box :accepted ,{},checked_value = "true",unchecked_value = "false" %>
       <%= label_tag :accepted, "利用規約に同意する" %>
+      <%= link_to "利用規約", pages_terms_path, remote: true %>
+      <div id="terms-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
     </div>
     <%= f.submit "登録する", class: "btn btn-lg btn-primary btn-block" %>
     <%= link_to user_facebook_omniauth_authorize_path, class: "btn btn-block btn-social btn-facebook" do %>

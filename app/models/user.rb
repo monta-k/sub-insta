@@ -4,7 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook]
 
+  enum sex: { 男性: 1, 女性: 2}
+
   validates :name, presence: true, length: { maximum: 50 }
+  validates :full_name, presence: true, length: { maximum: 50 }
   validates :accepted, presence: { message: 'を入力してください' }
 
   def self.find_for_oauth(auth)
@@ -16,7 +19,9 @@ class User < ApplicationRecord
       provider: auth.provider,
       email:    User.dummy_email(auth),
       name: auth.info.name,
-      password: Devise.friendly_token[0, 20]
+      full_name: auth.info.name,
+      password: Devise.friendly_token[0, 20],
+      accepted: true
       )
     end
 
