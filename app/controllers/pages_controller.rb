@@ -2,6 +2,7 @@ class PagesController < ApplicationController
 before_action :signed_in?, only: [:index]
 
   def index
+    @posts = Post.all.includes(:photos, :user, :likes).order('created_at DESC')
   end
 
   def terms

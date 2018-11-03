@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update]
   resources :posts, only: [:index, :new, :create, :show] do
     resources :photos, only: [:create]
+    resources :likes, only: [:create, :destroy], shallow: true
+    resources :comments, only: [:index, :create, :destroy], shallow: true
   end
 end

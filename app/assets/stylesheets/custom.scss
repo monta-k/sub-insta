@@ -142,7 +142,7 @@ body {
 }
 
 .love {
-  background-image: image-url("parts5");
+  background-image: image-url("non-heart");
   background-repeat: no-repeat;
   height: 36px;
   width: 36px;
@@ -151,7 +151,7 @@ body {
 
 .comment {
   margin-left: 8px;
-  background-image: image-url("parts6");
+  background-image: image-url("comment");
   background-repeat: no-repeat;
   height: 36px;
   width: 36px;
@@ -167,4 +167,31 @@ body {
 .post-sub-text {
   text-decoration: none;
   color: #262626;
+}
+
+//いいねボタン
+.loved {
+  background-image: image-url("heart");
+  background-repeat: no-repeat;
+  height: 36px;
+  width: 36px;
+  background-size: 36px !important;
+}
+
+.hide-text {
+  display: block;
+  overflow: hidden;
+  text-indent: 110%;
+  white-space: nowrap;
+}
+
+//コメント
+.delete-comment {
+  background-image: image-url("delete");
+  background-repeat: no-repeat;
+  width: 11px;
+  height: 11px;
+  float: right;
+  margin: 5px 0 0 10px;
+  background-size: 11px !important;
 }
