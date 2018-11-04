@@ -1,15 +1,8 @@
 <div class="container">
-  <div class="profile-wrap">
-    <div class="row">
-      <aside class="col-md-4">
-        <%= render "user_info" %>
-      </aside>
-      <div class="col-md-8">
-        <section class="stats">
-          <%= render "posts/post_list" %>
-        </section>
-        <%= paginate @posts %>
-      </div>
-    </div>
-  </div>
+  <%= render "user_info" %>
 </div>
+
+<div class="photo-section">
+  <%= render "posts/post_list" %>
+</div>
+<%= paginate @posts %>

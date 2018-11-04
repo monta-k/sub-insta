@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts.includes(:photos, :user, :likes).order('created_at DESC').page(params[:page]).per(5)
+    @posts = @user.posts.includes(:photos, :user, :likes).order('created_at DESC').page(params[:page]).per(30)
   end
 
   def edit

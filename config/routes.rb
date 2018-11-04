@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
-  resources :posts, only: [:index, :new, :create, :show] do
+  resources :posts, only: [:index, :new, :create, :show, :destroy] do
     resources :photos, only: [:create]
     resources :likes, only: [:create, :destroy], shallow: true
     resources :comments, only: [:index, :create, :destroy], shallow: true

@@ -29,6 +29,25 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @post = Post.find(params[:id])
+    @photos = @post.photos
+    @likes = @post.likes.includes(:user)
+    respond_to do |format|
+      format.html { redirect_to post_path(@post) }
+      format.js
+    end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    if @post.user == current_user
+      return flash[:notice] = "投稿が削除されました" if @post.destroy
+      flash[:alert] = "削除に失敗しました"
+    end
+    redirect_to root_path
+  end
+
   private
 
     def post_params
