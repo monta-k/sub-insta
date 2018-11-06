@@ -11,6 +11,6 @@ end
 
 users = User.all
 users.each do |user|
-  post = user.posts.create
+  post = user.posts.create(caption: "")
   post.photos.create(image: open("#{Rails.root}/db/fixtures/cat.jpeg"))
 end

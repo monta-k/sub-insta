@@ -12,9 +12,6 @@
       <li class="nav-item active">
         <%= link_to "ユーザー一覧", users_path, class: "nav-link" %>
       </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">設定</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
@@ -24,10 +21,16 @@
         </div>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <%= form_tag "/search", method: "get", class: "form-inline my-lg-0" do %>
+    　<div class="search-form">
+        <%= text_field_tag :search_content, params[:search_content], placeholder: "Search", class: "form-control mr-sm-2" %>
+        <br>
+        ユーザーネーム<%= radio_button_tag :search_type, 0, checked: true %>
+        <%= " / " %>
+        投稿文<%= radio_button_tag :search_type, 1 %>
+      </div>
+      <%= submit_tag "Search", class: "btn btn-outline-success" %>
+    <% end %>
   </div>
   <% end %>
 </nav>

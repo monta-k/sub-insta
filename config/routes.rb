@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   root to: "pages#index"
   get "pages/terms" => "pages#terms"
+  get "/search" => "pages#search"
   resources :users, only: [:index, :show, :edit, :update] do
     member do
       get :following, :followers
