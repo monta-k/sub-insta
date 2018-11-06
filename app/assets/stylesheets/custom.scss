@@ -28,7 +28,7 @@ body {
     text-align: center;
 }
 
-.title {
+.main-title {
   background-image: image-url("title");
   background-size: cover;
   width: 100%;
@@ -284,6 +284,10 @@ body {
   }
 }
 
+.title {
+  margin-top: 30px;
+}
+
 //投稿詳細
 .post-wrap .col-md-8 {
   padding: 0px;
@@ -319,4 +323,9 @@ body {
   background-size: 20px !important;
   color: #262626;
   font-size: 20px;
+}
+
+//フォローボタン
+.follow-btn {
+  margin-left: 20px;
 }

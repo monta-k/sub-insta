@@ -11,10 +11,10 @@
       <% if current_user == @user %>
         <%= link_to "プロフィールを編集", edit_user_path(@user), class: "btn btn-outline-dark common-btn edit-profile-btn my-auto" %>
       <% end %>
+      <%= render "follow_form" %>
     </div>
   </div>
 </div>
 <div class="bio text-center">
   <%= @user.bio %>
 </div>
-<h3>投稿数 <%= @user.posts.count %>件</h3>
