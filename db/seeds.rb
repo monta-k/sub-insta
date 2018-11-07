@@ -13,13 +13,13 @@ User.create!(name: "サンプルユーザー",
         full_name: "サンプルユーザー",
         email: "sample@email.com",
         accepted: true,
-        password: password)
+        password: "password")
 
 User.create!(name: "サンプルユーザー2",
         full_name: "サンプルユーザー2",
         email: "sample2@email.com",
         accepted: true,
-        password: password)
+        password: "password")
 
 
 users = User.all
