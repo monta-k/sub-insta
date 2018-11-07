@@ -4,7 +4,13 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  if Rails.env.development?
+    storage :file
+  elsif Rails.env.test?
+    storage :file
+  else
+    storage :fog
+  end
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
@@ -20,6 +26,10 @@ class PhotoUploader < CarrierWave::Uploader::Base
   def create_square_image(rmagick, size)
     narrow = rmagick.columns > rmagick.rows ? rmagick.rows : rmagick.columns
     rmagick.crop(Magick::CenterGravity, narrow, narrow).resize(size, size)
+  end
+
+  def filename
+    original_filename if original_filename
   end
 
   # Provide a default URL a default if there hasn't been a file uploaded:

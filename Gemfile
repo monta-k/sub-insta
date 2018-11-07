@@ -29,6 +29,7 @@ gem 'rmagick'
 
 #carrierwave
 gem 'carrierwave'
+gem 'fog'
 
 # Use sqlite3 as the database for Active Record
 
