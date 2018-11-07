@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' }
 
   root to: "pages#index"
-  get "pages/terms" => "pages#terms"
-  get "/search" => "pages#search"
+  get "pages/terms", to: "pages#terms"
+  get "/search", to: "pages#search"
+  get 'notifications/:id/link_through', to: 'notifications#link_through', as: :link_through
   resources :users, only: [:index, :show, :edit, :update] do
     member do
       get :following, :followers

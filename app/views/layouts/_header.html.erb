@@ -21,6 +21,9 @@
         </div>
       </li>
     </ul>
+
+    <%= render "notifications/notification_dropdown" %>
+
     <%= form_tag "/search", method: "get", class: "form-inline my-lg-0" do %>
     　<div class="search-form">
         <%= text_field_tag :search_content, params[:search_content], placeholder: "Search", class: "form-control mr-sm-2" %>

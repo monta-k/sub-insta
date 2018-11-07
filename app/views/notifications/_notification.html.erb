@@ -1,0 +1,3 @@
+<li>
+  <%= link_to "#{notification.notified_by.name}さんがあなたの記事に#{notification.notified_type}しました", link_through_path(notification), remote: true, class: "btn btn-light" %>
+</li>
