@@ -1,6 +1,6 @@
 <div class="sign-in-body text-center">
+  <%= image_tag "/assets/camera.png", height: 100, width: 100, class: "mb-4 mt-4" %>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-signin"}) do |f| %>
-    <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
     <%= devise_error_messages! %>
     <%= f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: "form-control" %>

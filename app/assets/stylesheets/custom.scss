@@ -19,6 +19,12 @@ body {
     padding-bottom: 3rem;
 }
 
+#error_explanation {
+  h2 {
+    display: none;
+  }
+}
+
 .alert {
   margin-bottom: -1rem;
   margin-top: 1rem;
