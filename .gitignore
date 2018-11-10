@@ -23,6 +23,8 @@
 
 /public/uploads
 
+/vender
+
 /node_modules
 /yarn-error.log
 
