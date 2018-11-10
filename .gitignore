@@ -21,11 +21,19 @@
 /storage/*
 !/storage/.keep
 
+/public/uploads
+
+/vender
+
 /node_modules
 /yarn-error.log
+
+public/uploads
 
 /public/assets
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+/.env
