@@ -19,6 +19,11 @@ body {
     padding-bottom: 3rem;
 }
 
+.alert {
+  margin-bottom: -1rem;
+  margin-top: 1rem;
+}
+
 .container {
     width: 100%;
     padding-right: 15px;
@@ -242,6 +247,7 @@ body {
   height: 11px;
   float: right;
   margin: 5px 0 0 10px;
+  padding-right: 1rem;
   background-size: 11px !important;
 }
 
@@ -289,29 +295,15 @@ body {
 }
 
 //投稿詳細
-.post-wrap .col-md-8 {
-  padding: 0px;
+
+.img-show {
+  margin: 1rem 0 1rem 1rem;
 }
 
-.card-right {
-  padding: 20px;
-}
-
-.card-right-name {
-  padding-bottom: 10px;
-  border-bottom: 1px solid #e6e6e6;
-}
-
-.card-right-comment {
-  padding-bottom: 10px;
-  border-bottom: 1px solid #e6e6e6;
-  height: 320px;
-  overflow: auto;
-}
-
-.postShow-wrap {
-  border: 1px solid #e6e6e6;
-  margin-top: 40px;
+.post-time {
+  margin: 1rem;
+  display: inline-block;
+  float: left;
 }
 
 //投稿削除機能
