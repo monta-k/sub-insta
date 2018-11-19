@@ -3,23 +3,26 @@
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
   User.create!(name: name,
-          full_name: name,
-          email: email,
-          accepted: true,
-          password: password)
+    full_name: name,
+    email: email,
+    accepted: true,
+    password: password
+  )
 end
 
 User.create!(name: "サンプルユーザー",
-        full_name: "サンプルユーザー",
-        email: "sample@email.com",
-        accepted: true,
-        password: "password")
+  full_name: "サンプルユーザー",
+  email: "sample@email.com",
+  accepted: true,
+  password: "password"
+)
 
 User.create!(name: "サンプルユーザー2",
-        full_name: "サンプルユーザー2",
-        email: "sample2@email.com",
-        accepted: true,
-        password: "password")
+  full_name: "サンプルユーザー2",
+  email: "sample2@email.com",
+  accepted: true,
+  password: "password"
+)
 
 
 users = User.all
