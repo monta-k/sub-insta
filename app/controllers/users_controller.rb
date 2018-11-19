@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   end
 
   def following
+    @page_title = "following"
     @title = "フォローしている"
     @user = User.find(params[:id])
     @users = @user.following.page(params[:page]).per(10)
@@ -32,6 +33,7 @@ class UsersController < ApplicationController
   end
 
   def followers
+    @page_title = "followers"
     @title = "フォローされている"
     @user = User.find(params[:id])
     @users = @user.followers.page(params[:page]).per(10)
