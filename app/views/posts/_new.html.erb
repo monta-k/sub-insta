@@ -1,0 +1,30 @@
+<%= provide(:title, "New Post") %>
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="d-flex flex-column align-items-center mt-3">
+      <div class="post-card">
+        <div class="card">
+          <div class="card-header">
+            投稿画面
+          </div>
+          <div class="card-body">
+            <%= form_for @post, html: { multipart: true, class: "upload-images p-0 border-0" }, remote: true do |f| %>
+              <div class="form-group row mt-2">
+                <div class="pr-0">
+                  <%= image_tag avatar_url(current_user), class: "round-img" %>
+                </div>
+                <div class="pl-0">
+                  <%= f.text_field :caption, class: "form-control　post-caption border-0", placeholder: "投稿文を書く" %>
+                </div>
+              </div>
+              <div class="mb-3">
+                <%= file_field_tag "images[]", type: :file, multiple: false, accept: 'image/jpeg, image/png' %>
+              </div>
+              <%= f.submit "投稿する", class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

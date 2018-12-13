@@ -1,0 +1,26 @@
+<%= provide(:title, "sign_in") %>
+<div class="sign-in-body text-center">
+  <%= image_tag "/assets/camera.png", height: 100, width: 100, class: "mb-4 mt-4" %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-signin"}) do |f| %>
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <%= devise_error_messages! %>
+    <%= f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: "form-control" %>
+    <%= f.password_field :password, autocomplete: "off", placeholder: "パスワード", class: "form-control" %>
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <%= f.submit "ログイン", class: "btn btn-lg btn-primary btn-block" %>
+    <%= link_to user_facebook_omniauth_authorize_path, class: "btn btn-block btn-social btn-facebook" do %>
+      <span class="fa fa-facebook"></span>Facebookでログイン
+    <% end %>
+  <% end %>
+  <div class="form-wrap">
+    <p class="text-center">
+      アカウントをお持ちでないですか？
+      <%= link_to "登録する", new_user_registration_path%>
+    </p>
+  </div>
+  <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+</div>

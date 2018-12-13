@@ -1,0 +1,21 @@
+<%= provide(:title, "Search result") %>
+<% if @users %>
+  <div class="container">
+    <div class="title">
+      <h1 class="text-center">ユーザー検索結果：<%= @count %>件</h1>
+    </div>
+  </div>
+  <%= render "users/user_list" %>
+<% elsif @posts %>
+  <div class="container">
+    <div class="title">
+      <h1 class="text-center">投稿検索結果：<%= @count %>件</h1>
+    </div>
+  </div>
+  <div class="photo-section">
+    <%= render "posts/post_list" %>
+  </div>
+  <%= paginate @posts %>
+<% else %>
+  <h1>検索結果0</h1>
+<% end %>

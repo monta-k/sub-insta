@@ -1,0 +1,7 @@
+<%= provide(:title, @page_title) %>
+<div class="container">
+  <%= render "user_info" %>
+  <h3><%= "#{@user.name}が#{@title}ユーザー" %></h3>
+</div>
+
+<%= render "user_list" %>
